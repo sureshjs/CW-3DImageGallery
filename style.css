@@ -3,24 +3,18 @@ html {
 	width: 100%;
 }
 
+body {
+	background: white;
+}
+
+h1 {
+	text-align: center;
+	font-size: 2em;
+	text-shadow:2px 2px 2px #333333;
+}
+
 figure {
 	display: inline-block;
-	border: 1px solid #00cccf;
-}
-
-img {
-	-webkit-perspective: 600;
-	-webkit-transform: rotate3d(1, 0, 1, 90deg);
-	-webkit-transition: -webkit-transform 0.5s ease;
-}
-
-figcaption {
-	opacity: 0;
-	-webkit-transition: opacity 0.5s ease;
-}
-
-figure:hover figcaption {
-	opacity: 1;
 }
 
 img {
@@ -28,8 +22,27 @@ img {
 	-moz-box-shadow: 10px 10px 5px #888;
 	-webkit-box-shadow: 10px 10px 5px #888;
 	box-shadow: 2px 2px 10px #888;
-	}
+	opacity: .4;
+	
+	-webkit-transform: perspective(500) rotateX(65deg) rotateY(60deg) rotateZ(-10deg);
+	-webkit-transform-origin: center bottom;
+	-webkit-transition: -webkit-transform 0.5s ease, opacity 0.8s ease, -webkit-box-shadow 2.0s ease;
+}
+
+figcaption {
+	opacity: 0;
+	padding-top: 10px;
+	-webkit-transition: opacity 0.5s ease;
+}
+
+figure:hover figcaption {
+	opacity: 1;
+}
 
 figure:hover img {
-	-webkit-transform: rotate3d(1, 0, 1, 0deg);
+	-webkit-transform: perspective(700) rotateX(0deg);
+	opacity: 1;
+	-webkit-box-shadow: 0px 0px 15px 20px rgba(255, 50, 50, .5);
+	-moz-box-shadow: 0px 0px 15px 20px rgba(255, 50, 50, .5);
+	box-shadow: 0px 0px 15px 20px rgba(255, 50, 50, .5);
 }
